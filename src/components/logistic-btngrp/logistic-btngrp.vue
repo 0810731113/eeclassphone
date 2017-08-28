@@ -3,7 +3,7 @@
     <div class="logistic-box">
       <ul>
         <li v-for="(item, index) in logisticInfo" key="index">
-          <div @click="toAnotherPage" class="img-box"><img :src="item.icon" alt=""></div>
+          <div @click="toAnotherPage(item)" class="img-box"><img :src="item.icon" alt=""></div>
           <div class="text-box">{{item.text}}</div>
         </li>
       </ul>
@@ -11,7 +11,7 @@
     <div class="industry-box">
       <div class="ul">
         <div class="li" v-for="(item , index) in industryInfo" key="item.id" >
-          <div class="icon-box" @click="toAnotherPage(index,$event)" ><i :class="item.iconclass"></i></div>
+          <div class="icon-box" @click="toAnotherPage(item,$event)" ><i :class="item.iconclass"></i></div>
           <div class="text-box">{{item.text}}</div>
           <span v-if=""></span>
         </div>
@@ -23,7 +23,7 @@
       <!--</div>-->
     <!--</div>-->
     <div class="teach-software-box">
-      <div class="left-box" @click="toSoftwarePage('futureclass')">
+      <div class="left-box" @click="toSoftwarePage('futureclass')" >
         未来课堂
       </div>
       <div class="right-box">
@@ -69,58 +69,68 @@
         industryInfo: [
           {
             id: 'industry01',
-            text: '多层穿梭车',
-            iconclass:'iconfont icon-xiaoqiche'
+            text: '仓储Robot',
+            iconclass:'iconfont icon-xiaoqiche' ,
+            url: '/robotdetail/cc-robot'
+
           },
           {
             id: 'industry02',
-            text: '激光叉车AGV',
-            iconclass:'iconfont icon-jiguangqiegeji'
+            text: '多层穿梭车',
+            iconclass:'iconfont icon-jiguangqiegeji' ,
+            url: '/robotdetail/dccs-car'
           },
           {
             id: 'industry03',
-            text: '助教Robot',
-            iconclass:'iconfont icon-jiqiren'
+            text: '无人激光叉车',
+            iconclass:'iconfont icon-jiqiren' ,
+            url: '/robotdetail/jgdh-agv'
           },
           {
             id: 'industry04',
-            text: '综合云平台',
-            iconclass:'iconfont icon-yun2'
+            text: '助教Robot',
+            iconclass:'iconfont icon-yun2' ,
+            url: '/robotdetail/zj-robot'
           }
         ],
         logisticInfo: [
           {
             id: 'lo001' ,
-            text: '普通仓储',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_03.png'
+            text: '立体货架',
+            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_03.png',
+            url: '/logisticdetail/lthj'
           },
           {
             id: 'lo002' ,
-            text: '自动搬运',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_05.png'
+            text: '巷道式堆垛机',
+            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_05.png',
+            url: '/logisticdetail/xdsddj'
           },
           {
             id: 'lo003' ,
-            text: '输送线',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_07.png'
+            text: '链条式输送机',
+            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_07.png',
+            url: '/logisticdetail/ltsssj'
           },
           {
             id: 'lo004' ,
-            text: '分流转向',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_09.png'
+            text: '滑块式分拣线',
+            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_09.png',
+            url: '/logisticdetail/hksfjx'
           },
           {
             id: 'lo005' ,
-            text: '智能超市',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_11.png'
+            text: '智能购物车',
+            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_11.png',
+            url: '/logisticdetail/zngwc'
           }
         ]
       }
     },
     methods: {
-      toAnotherPage(index , e){
+      toAnotherPage(item , e){
         this.$router.push({
-          path: '/logisticdetail'
+          path: item.url
         })
       },
       toSoftwarePage(url){

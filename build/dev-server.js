@@ -44,6 +44,15 @@ app.get('/ldd' , function(req, res){
   })
 })
 
+app.get('/robot' , function(req, res){
+  console.log(req.query)
+  var jsondata = require('../json/'+ req.query.id +'.json')
+  res.json({
+    error: 0 ,
+    data: jsondata
+  })
+})
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

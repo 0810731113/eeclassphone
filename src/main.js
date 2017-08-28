@@ -27,13 +27,10 @@ Vue.use(VueLazyload, {
 })
 Vue.use(VueResource)
 
-
 if (process.browser) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
   Vue.use(VueAwesomeSwiper)
 }
-
-
 
 function getScreenInfo(){
   // var bodyHei = document.body.clientHeight ;
@@ -68,7 +65,7 @@ const routes = [
       { path: '/eeclassintro', component: EeclassIntro},
       { path: '/connectus', component: ConnectUs },
       { path: '/logisticdetail/:id', component: LogisticDetail},
-      { path: '/robotdetail', component: RobotDetail}
+      { path: '/robotdetail/:id', component: RobotDetail}
     ]
   },
   // { path: '/videoplayer', component: VideoPlayer}

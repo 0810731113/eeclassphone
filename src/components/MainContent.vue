@@ -12,7 +12,7 @@
             <swiper-slide><img src="../assets/banner/bannerfutureeeclass.jpg" style="width: 100%;" /></swiper-slide>
             <swiper-slide><img src="../assets/banner/banner2.png" style="width: 100%;" /></swiper-slide>
             <swiper-slide><img src="../assets/banner/bannerJ3.jpg" style="width: 100%;" /></swiper-slide>
-            <swiper-slide><img src="../assets/banner/bannerJ1.jpg" style="width: 100%;" /></swiper-slide><!-- Optional controls -->
+            <swiper-slide><img src="../assets/banner/bannerJ1.jpg" style="width: 100%;" /></swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
           </swiper>
         </div>
@@ -153,19 +153,19 @@
         ],
         robotLink:[
           {
-            link:'/robotdetail',
+            link:'/robotdetail/cc-robot',
             text:'仓储Robot'
           },
           {
-            link:'/robotdetail',
+            link:'/robotdetail/dccs-car',
             text:'多层穿梭车'
           },
           {
-            link:'/robotdetail',
+            link:'/robotdetail/jgdh-agv',
             text:'激光叉车'
           },
           {
-            link:'/robotdetail',
+            link:'/robotdetail/zj-robot',
             text:'助教Robot'
           }
         ],
@@ -342,29 +342,29 @@
   .logistic-box {
 
   /*margin-top: 6px;*/
-  ul {
-    width: 100;
-    display: flex;
-    justify-content: space-around;
+    ul {
+      width: 100;
+      display: flex;
+      justify-content: space-around;
 
-  li {
-    list-style-type: none;
-    width: 16%;
+    li {
+      list-style-type: none;
+      width: 16%;
 
-  .img-box {
-    text-align: center;
+    .img-box {
+      text-align: center;
 
-  img {
-    width: 92%;
+    img {
+      width: 92%;
+    }
+
   }
-
-  }
-  .text-box {
-    text-align: center;
-    font-family: "Microsoft YaHei";
-    font-size: 14px;
-    padding-top: 6px;
-  }
+    .text-box {
+      text-align: center;
+      font-family: "Microsoft YaHei";
+      font-size: 14px;
+      padding-top: 6px;
+    }
 
   }
   }

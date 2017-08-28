@@ -6,8 +6,7 @@
       </div>
       联系我们
     </div>
-    <div class="banner-box">
-    </div>
+    <!--<div class="banner-box"></div>-->
     <div class="scroll-box" ref="scrollBox">
       <div class="content" ref="content">
         <div class="content-box">
@@ -103,6 +102,11 @@ export default {
   z-index:1200;
   background-color: #FFF;
 }
+
+.scroll-box{
+  margin-top: 36px;
+}
+
 .footer-box{
   margin-top:12px;
   border-top:1px solid #e6e6e6;

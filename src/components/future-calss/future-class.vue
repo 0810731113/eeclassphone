@@ -11,7 +11,7 @@
 
 
     <div class="scroll-box" ref="scrollBox">
-      <div class="content">
+      <div class="content" ref="content">
         <div class="content-box">
           <divider>未来课堂简介</divider>
           <div class="text-box">
@@ -42,7 +42,6 @@
 import { Divider, XInput, Group,  XTextarea, XButton } from 'vux'
 import BScroll from 'better-scroll'
 import { prefixStyle } from 'common/js/dom'
-import { ldd } from './logisticDetailData'
 
 const RESERVED_HEIGHT = 36
 const transform = prefixStyle('transform')
@@ -61,9 +60,9 @@ export default {
     return {
       mainListHei: 300,
       scrollY: 0,
-      ldd: ldd,
       mainListHei:300,
-      ScrollY: 0
+      ScrollY: 0,
+      listLen: 0
     }
   },
   created (){
@@ -76,9 +75,9 @@ export default {
       this.bannerHei = this.$refs.logisticsBanner.clientHeight
       this.mainListHei = this.winHei - this.bannerHei
       this.minTranslateY = -this.bannerHei + RESERVED_HEIGHT
-      console.log(this.bannerHei);
-      console.log(this.mainListHei);
-      console.log(this.minTranslateY);
+
+      this.listLen = this.$refs.content.clientHeight
+
       this.$refs.scrollBox.style.height = this.mainListHei + 'px'
       this.$refs.scrollBox.style.top = this.bannerHei + 'px'
       this._initMainScroll()
@@ -109,6 +108,16 @@ export default {
       this.mainScroll.on('scroll',(pos) => {
         this.scrollY = pos.y ;
       })
+      this.mainScroll.on('scrollEnd' , () => {
+        var ll = this.$refs.content.clientHeight
+        if( ll == this.listLen){
+          return
+        } else {
+          this.listLen = ll ;
+          this.mainScroll.refresh() ;
+       }
+      })
+
 
     }
 

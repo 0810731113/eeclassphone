@@ -4,36 +4,36 @@
       <div @click="returnBack" class="return-box">
         <i class="iconfont icon-fanhui3"></i>
       </div>
-      助教机器人
+      {{listData.name}}
     </div>
     <div class="logistic-banner" ref="logisticsBanner"></div>
 
     <div class="scroll-box" ref="scrollBox">
-      <div class="content">
+      <div class="content" ref="content">
         <div class="content-box">
           <div class="mark-label">
             Make In China
             <span>高端制造</span>
           </div>
-          <h3>{{ldd.title}}</h3>
+          <h3>{{listData.title}}</h3>
           <div class="summery-text">
-            <p v-for="(item, index) in ldd.text">{{item}}</p>
+            <p v-for="(item, index) in listData.text">{{item}}</p>
           </div>
           <divider>图片展示</divider>
-          <div class="pic-box" v-for="(item, index) in ldd.pic">
+          <div class="pic-box" v-for="(item, index) in listData.pic">
             <img :src="item" alt="">
           </div>
           <divider>参数列表</divider>
           <div class="table-box">
             <x-table :cell-bordered="false" style="background-color: #fff" class="arg-table">
-              <thead v-if="ldd.table.thead">
+              <thead>
                 <tr>
-                  <th v-for="(item, index) in ldd.table.theaddata">{{item}}</th>
+                  <th v-for="(item, index) in listData.table.theaddata">{{item}}</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item, index) in ldd.table.data">
-                  <td v-for="sitem in item">{{sitem}}</td>
+                <tr v-for="(item, index) in listData.table.data">
+                  <td v-for="sitem in item" class="table-font">{{sitem}}</td>
                 </tr>
               </tbody>
 
@@ -43,7 +43,7 @@
           <divider>视频展示</divider>
 
           <div class="video-box">
-            <video controls="controls" v-for="(item, index) in ldd.video ">
+            <video controls="controls" v-for="(item, index) in listData.video ">
               <source :src="item" type="video/mp4" />
               <!--<source src="movie.ogg" type="video/ogg" />-->
               <!--<source src="movie.webm" type="video/webm" />-->
@@ -65,7 +65,7 @@ import { Search, Divider, XTable } from 'vux'
 //import VideoPlayer from '../video-player/video-player'
 import BScroll from 'better-scroll'
 import { prefixStyle } from 'common/js/dom'
-import { ldd } from './logisticDetailData'
+//import { ldd } from './logisticDetailData'
 
 const RESERVED_HEIGHT = 36
 const transform = prefixStyle('transform')
@@ -81,17 +81,39 @@ export default {
   data () {
     return {
       scrollY: 0,
-      ldd: ldd,
+//      ldd: ldd,
       mainListHei:300,
       ScrollY: 0,
       videoInfo1: {
         url: '',
         pic: ''
-      }
+      },
+      listData: {
+        name: '' ,
+        title: '',
+        text: '',
+        pic:[],
+        table:{
+          data:[],
+          theaddata:[]
+        }
+      },
+      listLen: 0
     }
   },
   created (){
-
+    var id = this.$route.params.id ;
+    console.log( id )
+    this.$http.get('/robot',{
+      params: {
+        //id: 'cc-robot'
+        id: id
+      }
+    }).then((response) => {
+      var response = response.body
+      this.listData = response.data
+//      console.log(this.listData)
+    })
   },
   mounted() {
     setTimeout(() => {
@@ -100,9 +122,8 @@ export default {
       this.bannerHei = this.$refs.logisticsBanner.clientHeight
       this.mainListHei = this.winHei - this.bannerHei
       this.minTranslateY = -this.bannerHei + RESERVED_HEIGHT
-//      console.log(this.bannerHei);
-//      console.log(this.mainListHei);
-//      console.log(this.minTranslateY);
+      this.listLen = this.$refs.content.clientHeight
+
       this.$refs.scrollBox.style.height = this.mainListHei + 'px'
       this.$refs.scrollBox.style.top = this.bannerHei + 'px'
       this._initMainScroll()
@@ -131,6 +152,15 @@ export default {
         this.scrollY = pos.y ;
       })
 
+      this.mainScroll.on('scrollEnd' , () => {
+        var ll = this.$refs.content.clientHeight ;
+        if(ll == this.listLen){
+          return
+        }else{
+          this.listLen = ll
+          this.mainScroll.refresh()
+        }
+      })
     }
 
   },
@@ -177,6 +207,12 @@ export default {
   background-color: #FFF;
   z-index: 1010;
 }
+
+.table-font{
+  color: #8f979a;
+  font-size:12px;
+}
+
 .footer-box{
   margin-top:12px;
   border-top:1px solid #e6e6e6;

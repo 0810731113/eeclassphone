@@ -65,7 +65,7 @@
                   <i class="iconfont icon-dianhua"></i>
                 </div>
                 <div class="info-box">
-                  021-12345678
+                  13585652384
                 </div>
               </div>
               <div class="every">
@@ -73,7 +73,7 @@
                   <i class="iconfont icon-03"></i>
                 </div>
                 <div class="info-box">
-                  021-12345678
+                  021-50598669
                 </div>
               </div>
               <div class="every">
@@ -81,7 +81,7 @@
                   <i class="iconfont icon-youxiang"></i>
                 </div>
                 <div class="info-box">
-                  021-12345678
+                  lq@ouruv.cn
                 </div>
               </div>
             </div>
