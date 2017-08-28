@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "顶升平移机" ,
+  "title": "顶升平移机" ,
+  "text": [
+    "货物转向输送机，拥有顶升和平移功能，完成两条输送线上的货物交替传送" ,
+    "采用品牌电气元件，性能可靠。运行速度快，灵敏性高"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/dingsheng.png",
+    "http://eeresource.eeclasscloud.com/device-args/dspyj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

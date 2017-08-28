@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "AVG搬运车" ,
+  "title": "AVG搬运车" ,
+  "text": [
+    "它是一种机械化、智能化极高的柔性物料搬运设备，可以依照控制程序自行导引，按照规划路线进行前进、后退、停止、转弯、移栽和定位。主要应用于汽车装配、食品加工、机械制造、药品生产等领域" ,
+    "采用先进的导引方式，行走定位精度高，适合多种工业环境、路径更改方便。中置双轮差速行驶，同时具有前进和倒车功能，使得路径规划更加轻松。车体车形、移栽机构可依需求定制，使产品能满足不同客户的要求。可选配高性能锂电池，快速充电，使用寿命长。支持手动和远程计算机控制，操作简单等特点"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/AVG.png",
+    "http://eeresource.eeclasscloud.com/device-args/avgbyc.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

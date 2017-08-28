@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "平移出入货台" ,
+  "title": "平移出入货台" ,
+  "text": [
+    "接驳在立体仓库与输送机之间，出入库货物在上做短暂停留，通过安装的识别系统，将货物信息传达给堆垛机和输送链控制系统，以此控制货物存储货位及出库流向" ,
+    "采用品牌电气元件，性能可靠。高强度铝型材边框、方管烤漆机架，外形美观，承载力强"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/pingyi.png",
+    "http://eeresource.eeclasscloud.com/device-args/pycrht.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "辊筒式输送机" ,
+  "title": "辊筒式输送机" ,
+  "text": [
+    "物流输送机械，适用于箱式及底面平整的单元货物输送。由于辊子之间存在间隙，所以不适合运送散装物" ,
+    "模组块设计，拆装简易。运行可靠，可正反向运转输送。支腿高度可调，适用范围大。金属表面经静电粉末喷涂，外形美观"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/zhoutong.png",
+    "http://eeresource.eeclasscloud.com/device-args/gtsssj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

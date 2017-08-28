@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "全中文电子标签分拣系统" ,
+  "title": "全中文电子标签分拣系统" ,
+  "text": [
+    "它是一种借助电子标签设备，以声光、数字显示为辅助工具，引导拣货人员进行拣货辅助人工拣货系统，广泛用于医药、烟草、邮政、零配件、超市等物流配送中心" ,
+    "以中文汉字、英文字母、数字、各种特殊符号为显示信息，兼具中、西方语言特点，适用性强。系统依靠条形码技术进行管理，输入准确、准确，实现无纸化管理操作，使得出库时间大幅缩短，拣货失误率降低，综合人力成本也可降低达50%以上。自动记录出入库信息，定期生成盘点清单。操作简单，短期培训即可上岗"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/fenj.png",
+    "http://eeresource.eeclasscloud.com/device-args/qzwdzbqfjxt.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

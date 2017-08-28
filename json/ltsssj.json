@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "链条式输送机" ,
+  "title": "链条式输送机" ,
+  "text": [
+    "是利用链条牵引、承载货物的输送机械，一般用来输送以托盘为单位的货物" ,
+    "承载力大，输送能力强。安装方便，操作简单，运行可靠。支腿高度可调，适用范围大。金属表面经静电粉末喷涂，外形美观"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/liantiao.png",
+    "http://eeresource.eeclasscloud.com/device-args/ltsssj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

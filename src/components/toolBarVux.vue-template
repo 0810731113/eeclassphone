@@ -1,0 +1,212 @@
+<template>
+  <div class="main-container">
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    <tabbar @on-index-change="getNavIndex">
+      <tabbar-item link="/maincontent">
+        <div slot="icon" class="nav-icon-btn">
+          <i class="iconfont icon-home"></i>
+        </div>
+        <span slot="label">首页</span>
+      </tabbar-item>
+      <tabbar-item show-dot>
+        <div slot="icon" class="nav-icon-btn">
+          <i class="iconfont icon-jiaoxue"></i>
+        </div>
+        <span slot="label">教学</span>
+      </tabbar-item>
+      <tabbar-item selected link="/hello" >
+        <div slot="icon" class="nav-icon-btn">
+          <i class="iconfont icon-cangku"></i>
+        </div>
+        <span slot="label">物流</span>
+      </tabbar-item>
+      <tabbar-item selected link="/hello" >
+        <div slot="icon" class="nav-icon-btn">
+          <i class="iconfont icon-jiqiren"></i>
+        </div>
+        <span slot="label">工业</span>
+      </tabbar-item>
+      <tabbar-item badge="2" link="/listview111">
+        <div slot="icon" class="nav-icon-btn">
+          <i class="iconfont icon-zhuye"></i>
+        </div>
+        <span slot="label">益课</span>
+      </tabbar-item>
+    </tabbar>
+
+    <div class="logistic-box">
+      <ul>
+        <li>
+          <div @click="toAnotherPage" class="img-box"><img src="../assets/icons/logisticIcon_03.png" alt=""></div>
+          <div class="text-box">普通仓储</div>
+        </li>
+        <li>
+          <div class="img-box"><img src="../assets/icons/logisticIcon_05.png" alt=""></div>
+          <div class="text-box">自动搬运</div>
+        </li>
+        <li>
+          <div class="img-box"><img src="../assets/icons/logisticIcon_07.png" alt=""></div>
+          <div class="text-box">输送线</div>
+        </li>
+        <li>
+          <div class="img-box"><img src="../assets/icons/logisticIcon_09.png" alt=""></div>
+          <div class="text-box">分流转向</div>
+        </li>
+        <li>
+          <div class="img-box"><img src="../assets/icons/logisticIcon_11.png" alt=""></div>
+          <div class="text-box">智能超市</div>
+        </li>
+      </ul>
+    </div>
+    <div v-transfer-dom>
+      <actionsheet :menus="menus" v-model="showMenus" show-cancel @on-click-menu="click5"></actionsheet>
+    </div>
+    <transition name="navfade">
+      <div class="select-soft-list" v-if="currNavIndex===1">
+        <ul>
+          <li>未来课堂</li>
+          <li>资源平台</li>
+          <li>Robot教学</li>
+        </ul>
+        <div class="point-triggle" >
+          <img src="../assets/icons/point-triggle.png" alt="">
+        </div>
+      </div>
+    </transition>
+
+
+  </div>
+</template>
+
+<script>
+import { XHeader, Actionsheet, TransferDom, ButtonTab, ButtonTabItem, Tabbar, TabbarItem, Group, Cell } from 'vux'
+
+export default {
+  directives: {
+    TransferDom
+  },
+  props: {
+    name: {
+      type: String,
+      default: 'Vue!'
+    }
+  },
+  components: {
+    XHeader,
+    Actionsheet,
+    ButtonTab,
+    ButtonTabItem,
+    Tabbar,
+    TabbarItem,
+    Group,
+    Cell
+  },
+  data () {
+    return {
+      menus: {
+        menu1: 'Take Photo',
+        menu2: 'Choose from photos'
+      },
+      showMenus: false,
+      title: '我是标题!!!',
+      currNavIndex: 0
+    }
+  },
+  methods: {
+    click5 (key, item) {
+      console.log(key, item)
+    },
+    getNavIndex(index){
+      console.log(index)
+      this.currNavIndex = index
+    },
+    toAnotherPage(e){
+      this.$router.push({
+        path:'/listview111'
+      })
+    }
+  }
+}
+</script>
+
+<style scoped lang="less">
+  @import '../assets/iconfonts/iconfont.css';
+  .nav-icon-btn{
+    i{
+      font-size: 24px;
+      line-height: 1.0;
+    }
+  }
+  .main-container{
+    /*position:relative;*/
+  }
+  .select-soft-list{
+    position:absolute;
+    bottom:68px;
+    width:30%;
+    left:15%;
+    ul{
+      display:block;
+      border-radius: 2px;
+      background-color: #FFF;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+      padding:6px 6px;
+      li{
+        line-height: 42px;
+        border-bottom: 1px solid #dddddd;
+        text-align: center;
+        list-style-type:none;
+
+        &:last-child{
+          border-bottom: none;
+         }
+      }
+    }
+    .point-triggle{
+      text-align: center;
+      position:absolute;
+      bottom:-16px;
+      width:100%;
+      img{
+        width:18px;
+      }
+    }
+  }
+  .logistic-box{
+    /*margin-top: 6px;*/
+    ul{
+      width:100;
+      display: flex;
+      justify-content:space-around;
+      li{
+        list-style-type:none;
+        width:16%;
+        .img-box{
+          text-align:center;
+          img{
+            width:92%;
+          }
+        }
+        .text-box{
+          text-align: center;
+          font-family: "Microsoft YaHei";
+          font-size: 14px;
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+
+  .navfade-enter-active, .navfade-leave-active{
+    transition: all 0.3s;
+    transform-origin:center bottom 0;
+  }
+  .navfade-enter, .navfade-leave-to{
+    opacity: 0;
+    transform:scale3d(0,0,0);
+    /*transform: translate3d(0, -100px, 0)*/
+  }
+
+</style>

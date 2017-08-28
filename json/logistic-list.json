@@ -1,0 +1,235 @@
+{
+  "router": "logisticlist" ,
+  "ldd": [
+    {
+      "id": "ltype001",
+      "name":"普通仓储设备",
+      "prod": [
+        {
+          "id": "lthj",
+          "title": "立体货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/liti.jpg",
+          "summary":"用来存放箱式、托盘式货物，和堆垛机共同组成AS/RS货物自动存取系统。"
+        },
+        {
+          "id": "zxhj",
+          "title": "重型货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/zhongx.jpg",
+          "summary":"适用于以托盘为单位，配以叉车，用来存储整托货物，多用于大型仓库"
+        },
+        {
+          "id": "midhj",
+          "title": "中型货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/zxing.jpg",
+          "summary":"适合人工拣选和存取以料箱为单位的货物，承重相对适中，多用于汽车配件仓库..."
+        },
+        {
+          "id": "qxhj",
+          "title": "轻型货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/qingx.jpg",
+          "summary":"通常用于中小件、较轻货物存储，以人力、手工搬运及拣选作业为主..."
+        },
+        {
+          "id": "llshj",
+          "title": "流利式货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/liuli.jpg",
+          "summary":"它是在货架横梁上安装流利式滑道，滑道呈3-5°倾斜。货物于进货端入..."
+        },
+        {
+          "id": "srshj",
+          "title": "驶入式货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/shirushi.jpg",
+          "summary":"是一种常用的密集存储托盘货架，适合少品种、大批量存取频次要求不高的场所..."
+        },
+        {
+          "id": "xbshj",
+          "title": "悬臂式货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/xuanbi.jpg",
+          "summary":"悬臂式货架适用于存放长物料、环型物料、板材、管材及不规则货物..."
+        },
+        {
+          "id": "glshj",
+          "title": "阁楼式货架",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/gelou.jpg",
+          "summary":"阁楼式货架系统是在已有的工作场地或货架上建一个中间阁楼，以增加存储空间..."
+        }
+      ]
+    },
+    {
+      "id": "ltype002",
+      "name":"自动搬运设备",
+      "prod": [
+        {
+          "id": "xdsddj",
+          "title": "巷道式堆垛机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/xiangdao.jpg",
+          "summary":"它与立体货架组成自动化仓库。因其无须安置在固定轨道上行走..."
+        },
+        {
+          "id": "rxddc",
+          "title": "柔性堆垛车",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/rouren.jpg",
+          "summary":"模块化设计，机械结构精巧，外形美观； 采用现场总线控制..."
+        },
+        {
+          "id": "csbxc",
+          "title": "穿梭板小车",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/chuansuo.jpg",
+          "summary":"穿梭小车与贯通式货架、穿梭车提升机构等设备配合使用..."
+        },
+        {
+          "id": "agvbyc",
+          "title": "AVG搬运车",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/agv.jpg",
+          "summary":"它是一种机械化、智能化极高的柔性物料搬运设备..."
+        }
+
+      ]
+    },
+    {
+      "id": "ltype003",
+      "name":"输送线设备",
+      "prod": [
+        {
+          "id": "ktsssj",
+          "title": "辊筒式输送机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/zhoutong.jpg",
+          "summary":"物流输送机械，适用于箱式及底面平整的单元货物输送..."
+        },
+        {
+          "id": "pdsssj",
+          "title": "皮带式输送机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/pidai.jpg",
+          "summary":"皮带输送机适用于不规则物品，散装物料的输送..."
+        },
+        {
+          "id": "ltsssj",
+          "title": "链条式输送机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/liantiao.jpg",
+          "summary":"利用链条牵引、承载货物的输送机械，一般用来输送以托盘为单位的货物..."
+        },
+        {
+          "id": "bslscx",
+          "title": "倍速链生产线",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/beisu.jpg",
+          "summary":"倍速链组成的生产线，主要用于装配及加工生产线中的物料输送..."
+        },
+        {
+          "id": "hksfjx",
+          "title": "滑块式分拣线",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/huakuai.jpg",
+          "summary":"是一种采用滑动滑块推压搬运物品进入相应分拣出库通道的输送分拣机械..."
+        }
+      ]
+    },
+    {
+      "id": "ltype004",
+      "name":"分流转向设备",
+      "prod": [
+        {
+          "id": "pycrht",
+          "title": "平移出入货台",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/pingyi.jpg",
+          "summary":"接驳在立体仓库与输送机之间，出入库货物在上做短暂停留，通过安装的识别系统"
+        },
+        {
+          "id": "dspyj",
+          "title": "顶升平移机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/dingsheng.jpg",
+          "summary":"货物转向输送机，拥有顶升和平移功能，完成两条输送线上的货物交替传送"
+        },
+        {
+          "id": "bbfjj",
+          "title": "摆臂分拣机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/baibi.jpg",
+          "summary":"是一种道口分流装置，通过旋转的机械臂，将货物推出、引流进设定的出口输送线，形成货物分拣功能"
+        },
+        {
+          "id": "pyzjj",
+          "title": "平移转角机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/pyzj.jpg",
+          "summary":"它是一种车载式的电子标签分拣系统，依靠其良好的移动性和无线网络通讯技术"
+        },
+        {
+          "id": "gltsj",
+          "title": "阁楼提升机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/tisheng.jpg",
+          "summary":"适合用于上下层输送机之间垂直连续提升、下传输送，以充分利用厂房立体空间"
+        }
+      ]
+    },
+    {
+      "id": "ltype005",
+      "name":"辅助拣选系统",
+      "prod": [
+        {
+          "id": "qzwdzbqfjxt",
+          "title": "全中文电子标签分拣系统",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/fenj.jpg",
+          "summary":"它是一种借助电子标签设备，以声光、数字显示为辅助工具，引导拣货人员进行拣货辅助人工拣货系统"
+        },
+        {
+          "id": "yyjhxt",
+          "title": "语音拣货系统",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/yyjhxt.jpg",
+          "summary":"语音导向拣选系统致力于为移动工人提供语音导向解决方案，将帮助客户更有效地应对各种商业挑战，包括发展"
+        },
+        {
+          "id": "dzbqjhc",
+          "title": "电子标签拣货车",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/dzbq.jpg",
+          "summary":"它是一种车载式的电子标签分拣系统，依靠其良好的移动性和无线网络通讯技术，引导操作人员"
+        }
+      ]
+    },
+    {
+      "id": "ltype006",
+      "name":"物联网智能超市售卖系统",
+      "prod": [
+        {
+          "id": "dzjgbq",
+          "title": "电子价格标签",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/dzjg.jpg",
+          "summary":"电子价格标签管理系统是一种替代目前传统纸质价格标签的现代信息化电子产品"
+        },
+        {
+          "id": "zngwc",
+          "title": "智能购物车",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/zngwc.jpg",
+          "summary":"智能购物车为一个条码及RFID识别功能、12-15寸以上大屏幕LCD触摸屏等功能的存物小推车"
+        }
+      ]
+    },
+    {
+      "id": "ltype007",
+      "name":"港口实训设备",
+      "prod": [
+        {
+          "id": "lmdqzj",
+          "title": "龙门吊起重机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/lmd.jpg",
+          "summary":"采用浮动式旋索机构，吊柜作业方式为吊具自动锁定模型箱上盖，车轮为实心橡胶轮胎或轨道"
+        },
+        {
+          "id": "abdqzj",
+          "title": "岸边吊起重机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/aqqzj.jpg",
+          "summary":"采用浮动式旋索机构，吊柜作业方式为吊具自动锁定模型箱上盖，水平移动采用前后四个驱动车轮"
+        },
+        {
+          "id": "mzsqzj",
+          "title": "门座式起重机",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/menz.jpg",
+          "summary":"以真实港口设备的1：10比例设计，模拟出港口设备操作效果"
+        },
+        {
+          "id": "jzxbyc",
+          "title": "集装箱搬运车",
+          "preview":"http://eeresource.eeclasscloud.com/logistic-list/jzx.jpg",
+          "summary":"采用先进的导引方式，行走定位精度高，适合多种工业环境、路径更改方便"
+        }
+      ]
+    }
+  ]
+
+}

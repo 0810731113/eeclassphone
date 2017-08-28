@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "龙门吊起重机" ,
+  "title": "龙门吊起重机" ,
+  "text": [
+    "以真实港口设备的1：10比例设计，模拟出港口设备操作效果" ,
+    "采用浮动式旋索机构，吊柜作业方式为吊具自动锁定模型箱上盖，车轮为实心橡胶轮胎或轨道，小车为自行式，起升机构和轨道式教学用机一样，但动力为交流电机驱动，金属结构采用国际流行的形式结构，形象逼真。大、小车及吊具均由知名品牌PLC控制，并且能够由上位机电脑程序来显示各个I/O的工作状况及控制操作"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/lmd.png" ,
+    "http://eeresource.eeclasscloud.com/device-args/lmdqzj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

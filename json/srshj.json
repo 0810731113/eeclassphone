@@ -1,0 +1,17 @@
+{
+  "id": "qxhj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "驶入式货架" ,
+  "title": "驶入式货架" ,
+  "text": [
+    "是一种常用的密集存储托盘货架，适合少品种、大批量存取频次要求不高的场所，广泛应用于各类仓库及物流中心如：食品、烟草、乳业、饮料、超市配送等行业。在实验室中也可配合穿梭板车，完成自动出入货。",
+    "具有可提供20%—30%的拣选性。适用于存储效率要求不是太高的仓库。与普通货架相比，驶入式货架系统可以提高地面60%左右的使用率，仅需配套前移式叉车 或平衡重式叉车即可使用等特点。"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/shirushi.png",
+    "http://eeresource.eeclasscloud.com/device-args/srshj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

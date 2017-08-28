@@ -1,0 +1,17 @@
+{
+  "id": "qxhj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "巷道式堆垛机" ,
+  "title": "巷道式堆垛机" ,
+  "text": [
+    "它与立体货架组成自动化仓库。因其无须安置在固定轨道上行走，在布局上具有柔性化的特点，能在多个巷道内完成存取货物。应用此设备，可以在货架巷道多的情况下，大大节省购置堆垛机的费用",
+    "模块化设计，机械结构精巧，外形美观； 采用现场总线控制，电控元件采用进口国际知名品牌；采用先进的自动定位技术；完善的安全保护装置，载货台的防坠系统，货叉安全装置;卓越的故障自诊断系统等特点"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/xiangdao.png",
+    "http://eeresource.eeclasscloud.com/device-args/xdsddj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}

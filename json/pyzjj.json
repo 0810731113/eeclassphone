@@ -1,0 +1,17 @@
+{
+  "id": "lthj" ,
+  "cover": "http://eeresource.eeclasscloud.com/banner-pic/gangkouBanner.png",
+  "name": "平移转角机" ,
+  "title": "平移转角机" ,
+  "text": [
+    "它是一种车载式的电子标签分拣系统，依靠其良好的移动性和无线网络通讯技术，引导操作人员穿梭于货架之间进行拣货作业.由于拣货台车上的存放空间有限，因此较适用于产品体积小，且出货频率不高的B、C 级产品，例如音响制品、医药、化妆品、电子零件等",
+    "此系统采用无线网络和订单自动转换功能，使得订单处理的时间大大缩短，准确率大大提高。提高配送中心出货分拣能力，增大了吞吐量，如果客户量的增多只需要增加台车数量即可，可扩展性强。提高配送中心出货分拣能力，增大了吞吐量，如果客户量的增多只需要增加台车数量即可，可扩展性强。采用条形码技术进行管理，提高订单处理的智能化水平，降低人员培训费用"
+  ],
+  "pic": [
+    "http://eeresource.eeclasscloud.com/logistic-detail/pyzj.png",
+    "http://eeresource.eeclasscloud.com/device-args/pyzjj.png"
+  ],
+  "video": [
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
+  ]
+}
