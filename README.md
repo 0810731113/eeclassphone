@@ -1,8 +1,6 @@
 # eeclassphone
 
-> phone eeclass website
-
-111111112222222222222222## Build Setup
+> phone eeclass websiteaaaaaaa## Build Setup
 
 ``` bash
 # install dependencies
