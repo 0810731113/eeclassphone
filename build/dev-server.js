@@ -14,6 +14,9 @@ var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
 
+var nodemailer = require('nodemailer')
+var smtpTransport = require('nodemailer-smtp-transport')
+
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
 // automatically open browser, if not set will be false
@@ -51,6 +54,76 @@ app.get('/robot' , function(req, res){
     error: 0 ,
     data: jsondata
   })
+})
+
+const emailInfo = {
+  service: '163' ,
+  user: 'LHH999138@163.com' ,
+  pass:'LH000936'
+}
+
+var smtpTransport = nodemailer.createTransport(smtpTransport({
+  service: emailInfo.service ,
+  auth: {
+    user: emailInfo.user ,
+    pass: emailInfo.pass
+  }
+})) ;
+
+function sendMail(recipient , subject , html){
+
+  var promise = new Promise(function(resolve, reject){
+    smtpTransport.sendMail({
+      from: emailInfo.user ,
+      to: recipient ,
+      subject: subject ,
+      html: html
+
+    },function(error , response){
+      if(error){
+        reject(error)
+      }else{
+        resolve(response)
+      }
+    })
+  })
+  return promise ;
+
+}
+
+app.get('/sendemail' , function(req , res){
+  console.log(req.query)
+  var reqCon = req.query
+  var mailTitle = "访客咨询"
+  var mailContent = ""
+
+  if(reqCon.username){
+    mailContent += "我是: " + reqCon.username ;
+  }
+  if(reqCon.telphone){
+    mailContent += " 我的电话是:  " + reqCon.telphone ;
+  }
+  if(reqCon.email){
+    mailContent += " 我的邮箱是:  " + reqCon.email ;
+  }
+  if(reqCon.question){
+    mailContent += " 我想咨询: " + reqCon.question ;
+  }
+  sendMail('895842425@qq.com', mailTitle , mailContent ).then(function(response){
+   console.log('response: ' +response[0])
+    res.json({
+      error: 0 ,
+      status: 'success'
+    })
+  }).catch(function(error){
+    console.log('sendmail-error!')
+    throw error ;
+    res.json({
+      error: 1 ,
+      status: 'fail'
+    })
+  })
+
 })
 
 var compiler = webpack(webpackConfig)

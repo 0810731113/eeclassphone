@@ -9,7 +9,7 @@
     "在运载机器人的工作场所预先安置了具有一定间隔的反射板,行进中的AGV通过车载的旋转激光头发射激光，在激光扫描一周后，照到发射板，激光原路返回，可以得到一系列发射板的反射角，经过计算，即可算得激光旋转中心的坐标。通过车载计算机计算，得到运输车所在位置，从而按规划的路径将货物送到目的地"
   ],
   "pic": [
-    "http://eeresource.eeclasscloud.com/robot/robot1112.JPG"
+    "http://eeresource.eeclasscloud.com/robot/wrjsjgcc1.png"
   ],
   "table" : {
     "column": 3 ,
@@ -35,6 +35,7 @@
     ]
   },
   "video": [
-    "http://eeresource.eeclasscloud.com/robot/robot1111.mp4"
+    "http://eeresource.eeclasscloud.com/robot/jiguangchache1.mp4" ,
+    "http://eeresource.eeclasscloud.com/robot/jiguangchache2.mp4"
   ]
 }

@@ -14,24 +14,24 @@
             亲爱的用户,请输入你要咨询的问题,我们会尽快回复你
           </h5>
           <group>
-            <x-input title="name"  placeholder="姓名" name="username" is-type="china-name" >
+            <x-input title="name"  placeholder="姓名" name="username" v-model="username" is-type="china-name" >
               <img slot="label" style="padding-right:10px;display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_03.png" width="24" height="24">
             </x-input>
           </group>
           <group>
-            <x-input title="Email"  placeholder="邮箱" name="email" is-type="email">
-              <img slot="label" style="padding-right:10px;display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_07.png" width="24" height="24">
+            <x-input title="Email"  placeholder="邮箱" name="email" v-model="email" is-type="email">
+              <img slot="label" style="padding-right:10px; display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_07.png" width="24" height="24">
             </x-input>
           </group>
           <group>
-            <x-input title="name"  placeholder="电话" name="tel" keyboard="number" is-type="china-mobile" >
+            <x-input title="name"  placeholder="电话" name="tel" v-model="telphone" keyboard="number" is-type="china-mobile" >
               <img slot="label" style="padding-right:10px;display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_10.png" width="24" height="24">
             </x-input>
           </group>
           <group>
-            <x-textarea :max="80" placeholder="请输入你的问题" @on-focus="onEvent('focus')" @on-blur="onEvent('blur')"></x-textarea>
+            <x-textarea :max="80" placeholder="请输入你的问题" v-model="question"  @on-focus="onEvent('focus')" @on-blur="onEvent('blur')"></x-textarea>
           </group>
-          <x-button type="warn" style="margin-top:24px; margin-bottom:24px;">发送</x-button>
+          <x-button type="warn" @click.native="sendMsg" style="margin-top:24px; margin-bottom:24px;">发送</x-button>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
   </div>
 </template>
 
-<script>
+<script  type="text/ecmascript-6">
 import { Divider, XInput, Group,  XTextarea, XButton } from 'vux'
 import BScroll from 'better-scroll'
 
@@ -53,25 +53,10 @@ export default {
   },
   data () {
     return {
-
-    }
-  },
-  created (){
-
-  },
-  mounted() {
-    setTimeout(() => {
-
-
-    }, 100)
-  },
-  filters: {
-    cutText( value ){
-      if(value.length <= 20){
-        return value ;
-      }else{
-        return value.substr(0, 20) + "..." ;
-      }
+      username: '' ,
+      email: '' ,
+      telphone: '' ,
+      question: ''
     }
   },
   methods: {
@@ -80,6 +65,21 @@ export default {
     },
     returnBack( ){
       this.$router.back();
+    },
+    sendMsg() {
+      console.log('进入方法')
+      this.$http.get('/sendemail' , {
+        params:{
+          username: this.username ,
+          email: this.email ,
+          telphone: this.telphone ,
+          question: this.question
+        }
+      }).then(( response ) => {
+        var response = response.body ;
+
+        console.log(response);
+      })
     }
 
   },

@@ -12,7 +12,8 @@
     "Ant-Store系统拣选效率高， 大大降低拣选成本，系统可扩展性强，通过加减多层穿梭车的数量来匹配波峰波谷出入库流量，存储密度高，空间利用率大，可以根据现场实际情况增加和删减模块来进行自由组合，实现快速拼接，货到人降低了劳动强度，优化了工作环境,提高订单执行的准确率"
   ],
   "pic": [
-    "http://eeresource.eeclasscloud.com/robot/robot1112.JPG"
+    "http://eeresource.eeclasscloud.com/robot/dccs-car1.jpg" ,
+    "http://eeresource.eeclasscloud.com/robot/dccs-car2.jpg"
   ],
   "table" : {
     "column": 3 ,
@@ -37,6 +38,6 @@
     ]
   },
   "video": [
-    "http://eeresource.eeclasscloud.com/robot/robot1111.mp4"
+    "http://eeresource.eeclasscloud.com/robot/dccsc-1.mp4"
   ]
 }

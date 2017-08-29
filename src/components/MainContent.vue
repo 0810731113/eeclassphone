@@ -79,7 +79,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import { Grid, GridItem, GroupTitle, Actionsheet, TransferDom, ButtonTab, ButtonTabItem, Tabbar, TabbarItem, Group, Cell } from 'vux'
   import LogisticBtngrp from './logistic-btngrp/logistic-btngrp'
   import BScroll from 'better-scroll'

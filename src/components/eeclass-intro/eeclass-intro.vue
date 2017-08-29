@@ -10,7 +10,7 @@
       <div class="logistic-banner" ref="logisticsBanner">
       </div>
 
-      <div class="scroll-box" ref="scrollBox">
+      <scroll @scroll = "scroll"  :listen-scroll="listenScroll" class="scroll-box" ref="scrollBox">
         <div class="content" ref="content">
           <div class="content-box">
             <divider>益课信息简介</divider>
@@ -96,16 +96,16 @@
           </div>
 
         </div>
-      </div>
+      </scroll>
     </div>
 
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import { Divider, XButton, Flexbox, FlexboxItem} from 'vux'
-import BScroll from 'better-scroll'
 import { prefixStyle } from 'common/js/dom'
+import Scroll from '../scroll/scroll'
 
 const RESERVED_HEIGHT = 36
 const transform = prefixStyle('transform')
@@ -116,7 +116,8 @@ export default {
     Divider,
     XButton,
     Flexbox,
-    FlexboxItem
+    FlexboxItem,
+    Scroll
   },
   data () {
     return {
@@ -130,14 +131,17 @@ export default {
         c : require("./eeclass12.png"),
         d : require("./eeclass13.png")
       },
-      listLen: 0
+      listLen: 0,
+      listenScroll: true,
+      isBottom: false
     }
   },
   created (){
-
+    this.probeType = 3
+    this.listenScroll = true
   },
   mounted() {
-    setTimeout(() => {
+
       this.winHei = Math.min(this.$refs.logisticDetailMainCon.clientHeight, window.innerHeight)
 
       this.bannerHei = this.$refs.logisticsBanner.clientHeight
@@ -145,11 +149,10 @@ export default {
       this.minTranslateY = -this.bannerHei + RESERVED_HEIGHT
       this.listLen = this.$refs.content.clientHeight
 
-      this.$refs.scrollBox.style.height = this.mainListHei + 'px'
-      this.$refs.scrollBox.style.top = this.bannerHei + 'px'
-      this._initMainScroll()
+      this.$refs.scrollBox.$el.style.top = this.bannerHei + 'px'
+      console.log(this.$refs.scrollBox.$el.style.top)
+//      this._initMainScroll()
 
-    }, 20)
   },
   filters: {
     cutText( value ){
@@ -168,25 +171,20 @@ export default {
       this.$router.back();
     },
     _initMainScroll(){
-      this.mainScroll = new BScroll(this.$refs.scrollBox,{
-//        click: true,
-        probeType: 3
-      })
-      this.mainScroll.on('scroll',(pos) => {
-        this.scrollY = pos.y ;
-      })
-      this.mainScroll.on('scrollEnd', () => {
-        var ll = this.$refs.content.clientHeight
-        if(ll == this.listLen){
-          return
-        }else{
-          this.listLen = ll
-          this.mainScroll.refresh()
-        }
-      })
+
+    },
+    scroll(pos){
+      this.scrollY = pos.y
+      var ll = this.$refs.content.clientHeight
+      if(ll !== this.listLen){
+        this.$refs.scrollBox.scroll.refresh()
+        this.listLen = ll
+      }
+
     },
     scrollToBottom(){
-      this.mainScroll.scrollToElement(this.$refs.footer, 300)
+      this.$refs.scrollBox.scroll.scrollToElement(this.$refs.footer, 300)
+
     },
     pathToConnect(){
       this.$router.push('/connectus')
@@ -195,6 +193,7 @@ export default {
   },
   watch: {
     scrollY(newVal){
+      console.log(newVal)
       let translateY = Math.max(this.minTranslateY,newVal)
       let scale = 1
       let zIndex = 0
@@ -293,10 +292,6 @@ div{
 }
 
 .footer-box{
-  /*margin-top:12px;*/
-  /*border-top:1px solid #e6e6e6;*/
-  /*padding-top:12px;*/
-  /*padding-bottom:12px;*/
   font-size: 12px;
   color:#ccc;
   line-height: 1.8rem;
@@ -304,6 +299,8 @@ div{
 }
 .scroll-box{
   position:absolute;
+  bottom:0 ;
+  /*top:0;*/
   background-color: #f6f6f6;
   width:100%;
   z-index: 5 ;
@@ -362,7 +359,8 @@ div{
   width:100%;
   height:0;
   background-size: cover;
-  position:relative;
+  position:absolute;
+  top:0 ;
   z-index:1;
   transform-origin: top;
   padding-top:31%;

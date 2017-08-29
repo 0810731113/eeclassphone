@@ -8,7 +8,7 @@
     "公司最新研制的仓储机器人是一款专门针对工厂简单轻型的物料搬运的产品。其规格为900mm×700mm×280mm，总载重可达到300公斤，两轮差速驱动，运行速度可达60m/min。它采用惯性二维码导航+惯性导航技术，不仅小巧灵活，而且精度高速度快，定位精度可达到毫米级；同时，它还采用激光、红外、超声、碰撞条等多类防护方式，具有自动躲避障碍物，自由规划路径、自动充电等强大功能。仓储机器人能根据订单，将货物所在的货架从巨大的仓库存储区搬运至员工处理区，把原来的人到货、人找货、人搬货变成现在的机器找货、搬货、货到人，大幅提高仓库管理效率。采用此款仓储机器人能提高近50%的仓储处理能力"
   ],
   "pic": [
-    "http://eeresource.eeclasscloud.com/robot/robot1112.JPG"
+    "http://eeresource.eeclasscloud.com/robot/ccjq-agv1.jpg"
   ],
   "table" : {
     "column": 3 ,
@@ -34,6 +34,6 @@
     ]
   },
   "video": [
-    "http://eeresource.eeclasscloud.com/robot/robot1111.mp4"
+    "http://eeresource.eeclasscloud.com/video/robotAGV_1.mp4"
   ]
 }

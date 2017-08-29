@@ -1,16 +1,25 @@
 <template>
   <div>
-    <div class="logistic-box">
-      <ul>
-        <li v-for="(item, index) in logisticInfo" key="index">
-          <div @click="toAnotherPage(item)" class="img-box"><img :src="item.icon" alt=""></div>
-          <div class="text-box">{{item.text}}</div>
-        </li>
-      </ul>
-    </div>
+    <!--<div class="logistic-box">-->
+      <!--<ul>-->
+        <!--<li v-for="(item, index) in logisticInfo" key="index">-->
+          <!--<div @click="toAnotherPage(item)" class="img-box"><img :src="item.icon" alt=""></div>-->
+          <!--<div class="text-box">{{item.text}}</div>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
     <div class="industry-box">
       <div class="ul">
         <div class="li" v-for="(item , index) in industryInfo" key="item.id" >
+          <div class="icon-box" @click="toAnotherPage(item,$event)" ><i :class="item.iconclass"></i></div>
+          <div class="text-box">{{item.text}}</div>
+          <span v-if=""></span>
+        </div>
+      </div>
+    </div>
+    <div class="industry-box">
+      <div class="ul">
+        <div class="li" v-for="(item , index) in industryInfo1" key="item.id" >
           <div class="icon-box" @click="toAnotherPage(item,$event)" ><i :class="item.iconclass"></i></div>
           <div class="text-box">{{item.text}}</div>
           <span v-if=""></span>
@@ -34,7 +43,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import {XHeader, Actionsheet, TransferDom, ButtonTab, ButtonTabItem, Tabbar, TabbarItem, Group, Cell} from 'vux'
   import RippleDemo from '../ripple-demo/ripple-demo'
   export default {
@@ -60,30 +69,26 @@
     },
     data () {
       return {
-        menus: {
-          menu1: 'Take Photo',
-          menu2: 'Choose from photos'
-        },
         showMenus: false,
         currNavIndex: 0,
         industryInfo: [
           {
             id: 'industry01',
             text: '仓储Robot',
-            iconclass:'iconfont icon-xiaoqiche' ,
+            iconclass:'iconfont icon-robot' ,
             url: '/robotdetail/cc-robot'
 
           },
           {
             id: 'industry02',
             text: '多层穿梭车',
-            iconclass:'iconfont icon-jiguangqiegeji' ,
+            iconclass:'iconfont icon-car' ,
             url: '/robotdetail/dccs-car'
           },
           {
             id: 'industry03',
             text: '无人激光叉车',
-            iconclass:'iconfont icon-jiqiren' ,
+            iconclass:'iconfont icon-chache1' ,
             url: '/robotdetail/jgdh-agv'
           },
           {
@@ -91,6 +96,45 @@
             text: '助教Robot',
             iconclass:'iconfont icon-yun2' ,
             url: '/robotdetail/zj-robot'
+          },
+          {
+            id: 'industry05',
+            text: '立体货架',
+            iconclass:'iconfont icon-gelou' ,
+            url: '/logisticdetail/lthj'
+          }
+        ],
+        industryInfo1: [
+          {
+            id: 'industry01',
+            text: '巷道式堆垛机',
+            iconclass:'iconfont icon-addhj' ,
+            url: '/logisticdetail/xdsddj'
+
+          },
+          {
+            id: 'industry02',
+            text: '门座式起重机',
+            iconclass:'iconfont icon-lvdaiqizhongji' ,
+            url: '/logisticdetail/mzsqzj'
+          },
+          {
+            id: 'industry03',
+            text: '滑块式分拣线',
+            iconclass:'iconfont icon-gaokongzuoyeche' ,
+            url: '/logisticdetail/hksfjx'
+          },
+          {
+            id: 'industry04',
+            text: '智能购物车',
+            iconclass:'iconfont icon-gouwuche' ,
+            url: '/logisticdetail/zngwc'
+          },
+          {
+            id: 'industry05',
+            text: '摆臂分拣机',
+            iconclass:'iconfont icon-hangshiji' ,
+            url: '/logisticdetail/bbfjj'
           }
         ],
         logisticInfo: [
@@ -144,7 +188,7 @@
 </script>
 
 <style scoped lang="less">
-  @import '../../assets/iconfonts/iconfont.css';
+  @import './icon/iconfont.css';
 
   .teach-software-box{
     width:98%;
@@ -202,7 +246,7 @@
   .industry-box{
     .ul{
       display:flex;
-      margin-top:36px;
+      margin-top:24px;
       width:100%;
       justify-content: space-around;
       .li{
@@ -212,14 +256,14 @@
           text-align: center;
           line-height:1.6rem;
           i{
-            font-size: 48px;
+            font-size: 46px;
             color:#2eb2e8;
           }
         }
         .text-box{
           margin-top: 8px;
           text-align:center;
-          font-size: 14px;
+          font-size: 12px;
         }
       }
     }

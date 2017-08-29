@@ -6,9 +6,7 @@
       </div>
       资源平台
     </div>
-    <div class="logistic-banner" ref="logisticsBanner">
-    </div>
-
+    <div class="logistic-banner" ref="logisticsBanner"></div>
 
     <div class="scroll-box" ref="scrollBox">
       <div class="content" ref="content">
