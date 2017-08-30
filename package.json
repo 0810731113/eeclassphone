@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "better-scroll": "^1.0.1",
     "fastclick": "^1.0.6",
     "nodemailer": "^4.1.0",

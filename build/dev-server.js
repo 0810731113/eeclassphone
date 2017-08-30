@@ -7,6 +7,7 @@ if (!process.env.NODE_ENV) {
 
 var opn = require('opn')
 var path = require('path')
+var fs = require('fs')
 var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -16,6 +17,8 @@ var webpackConfig = process.env.NODE_ENV === 'testing'
 
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport')
+
+var axios = require('axios')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -30,17 +33,21 @@ var app = express()
 var appData = require('../json/logistic-list.json')
 var ldd = appData.ldd ;
 
-//var apiRoutes = express.Router()
 app.get('/logisticlistdata' , function(req, res){
-  res.json({
+
+  var jsondata = {
     error: 0 ,
     data: ldd
-  })
+  }
+
+  res.json(jsondata)
+
 });
 
 app.get('/ldd' , function(req, res){
   console.log(req.query)
   var jsondata = require('../json/'+ req.query.id +'.json')
+  //var jsondata = require(sourceurl + req.query.id +'.json')
   res.json({
     error: 0 ,
     data: jsondata
@@ -50,6 +57,7 @@ app.get('/ldd' , function(req, res){
 app.get('/robot' , function(req, res){
   console.log(req.query)
   var jsondata = require('../json/'+ req.query.id +'.json')
+  //var jsondata = require(sourceurl + req.query.id +'.json')
   res.json({
     error: 0 ,
     data: jsondata

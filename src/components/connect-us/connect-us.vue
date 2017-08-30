@@ -35,16 +35,18 @@
         </div>
       </div>
     </div>
-
+    <toast v-model="toastshow" :time="1000">send seccess</toast>
+    <toast v-model="inputwarn" :time="1000" type="warn">输入有误</toast>
   </div>
 </template>
 
 <script  type="text/ecmascript-6">
-import { Divider, XInput, Group,  XTextarea, XButton } from 'vux'
+import { Divider, XInput, Group,  XTextarea, XButton, Toast } from 'vux'
 import BScroll from 'better-scroll'
 
 export default {
   components: {
+    Toast,
     Divider,
     XInput,
     Group,
@@ -56,7 +58,9 @@ export default {
       username: '' ,
       email: '' ,
       telphone: '' ,
-      question: ''
+      question: '',
+      toastshow: false ,
+      inputwarn: false
     }
   },
   methods: {
@@ -67,7 +71,28 @@ export default {
       this.$router.back();
     },
     sendMsg() {
-      console.log('进入方法')
+
+      if(this.username == null || !/[\u4e00-\u9fa5\w]{2,20}/.test(this.username)){
+        console.log("用户名输入有误")
+        this.inputwarn = true
+        return
+      }
+      if( this.telphone == null || !(/^1[3|4|5|8][0-9]\d{4,8}$/.test(this.telphone))){
+        console.log("手机号输入有误")
+        this.inputwarn = true
+        return
+      }
+      if(this.email == null || !(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(this.email) )){
+        console.log("邮箱输入有误")
+        this.inputwarn = true
+        return
+      }
+      if(this.question == null || !(/[\u4e00-\u9fa5\w]{4,120}/.test(this.question))){
+        console.log("问题输入有误")
+        this.inputwarn = true
+        return
+      }
+
       this.$http.get('/sendemail' , {
         params:{
           username: this.username ,
@@ -77,7 +102,9 @@ export default {
         }
       }).then(( response ) => {
         var response = response.body ;
-
+        if(response.error == 0){
+          this.toastshow = true
+        }
         console.log(response);
       })
     }
