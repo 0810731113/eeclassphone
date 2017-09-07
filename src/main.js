@@ -1,5 +1,3 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
@@ -12,13 +10,16 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import LogisticList from './components/logistic-list/logistic-list'
 import LogisticDetail from './components/logistic-detail/logistic-detail'
 import FutureClass from './components/future-calss/future-class'
-import ConnectUs from './components/connect-us/connect-us'
+// import ConnectUs from './components/connect-us/connect-us'
 import SourcePlatform from './components/source-platform/source-platform'
 import RobotTeach from './components/robot-teach/robot-teach'
 import EeclassIntro from './components/eeclass-intro/eeclass-intro'
 import VideoPlayer from './components/video-player/video-player'
 import RobotDetail from './components/robot-detail/robot-detail'
 import RippleDemo from './components/ripple-demo/ripple-demo'
+
+const ConnectUs = () => import('./components/connect-us/connect-us')
+
 
 Vue.use(VueRouter)
 Vue.use(VueAwesomeSwiper)

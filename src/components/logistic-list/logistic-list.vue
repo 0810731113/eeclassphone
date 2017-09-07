@@ -63,7 +63,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import { Search } from 'vux'
 //import { logisticlist } from './logisticslist'
 import BScroll from 'better-scroll'
@@ -92,9 +92,17 @@ export default {
   },
   created (){
 
-    this.$http.get('/logisticlistdata').then(( response ) => {
-      response = response.body ;
-      this.listData = response.data ;
+//    this.$http.get('/logisticlistdata').then(( response ) => {
+//      response = response.body ;
+//      this.listData = response.data ;
+//      console.log(this.listData)
+//    })
+
+    //this.$http.post('http://localhost:8080/eeclassphone/getlogisticlist.do',{ credentials: true }).then(( response ) => {
+    this.$http.get('/eeclassphone/getlogisticlist.do').then(( response ) => {
+      console.log(response)
+      //response = response.body ;
+      this.listData = response.data.ldd ;
       console.log(this.listData)
     })
   },

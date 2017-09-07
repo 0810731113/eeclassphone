@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <tabbar @on-index-change="getNavIndex" v-model="selectItem">
+    <tabbar @on-index-change="getNavIndex" v-model="selectItem" style="background-color: #FFF;">
       <tabbar-item link="/maincontent">
         <div slot="icon" class="nav-icon-btn">
           <i class="iconfont icon-home"></i>

@@ -14,7 +14,9 @@
   "dependencies": {
     "axios": "^0.16.2",
     "better-scroll": "^1.0.1",
+    "cluster": "^0.7.7",
     "fastclick": "^1.0.6",
+    "http-proxy": "^1.16.2",
     "nodemailer": "^4.1.0",
     "nodemailer-smtp-transport": "^2.7.4",
     "vue": "^2.2.2",

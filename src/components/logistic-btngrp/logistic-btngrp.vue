@@ -263,7 +263,7 @@
         .text-box{
           margin-top: 8px;
           text-align:center;
-          font-size: 12px;
+          font-size: 8px;
         }
       }
     }
