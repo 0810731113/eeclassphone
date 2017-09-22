@@ -14,9 +14,9 @@ import FutureClass from './components/future-calss/future-class'
 import SourcePlatform from './components/source-platform/source-platform'
 import RobotTeach from './components/robot-teach/robot-teach'
 import EeclassIntro from './components/eeclass-intro/eeclass-intro'
-import VideoPlayer from './components/video-player/video-player'
+// import VideoPlayer from './components/video-player/video-player'
 import RobotDetail from './components/robot-detail/robot-detail'
-import RippleDemo from './components/ripple-demo/ripple-demo'
+// import RippleDemo from './components/ripple-demo/ripple-demo'
 
 const ConnectUs = () => import('./components/connect-us/connect-us')
 
@@ -60,6 +60,7 @@ const routes = [
       { path: '', component: MainContent },
       { path: 'maincontent', component: MainContent, props:{height: contentHei} },
       { path: 'logisticlist', component: LogisticList},
+      { path: 'logisticlist/:id', component: LogisticList},
       { path: '/futureclass', component: FutureClass } ,
       { path: '/sourceplatform', component: SourcePlatform } ,
       { path: '/robotteach', component: RobotTeach },
@@ -68,9 +69,10 @@ const routes = [
       { path: '/logisticdetail/:id', component: LogisticDetail},
       { path: '/robotdetail/:id', component: RobotDetail}
     ]
-  },
+    
+  }
   // { path: '/videoplayer', component: VideoPlayer}
-  { path: '/rippledemo', component: RippleDemo}
+  // { path: '/rippledemo', component: RippleDemo}
 
 ]
 

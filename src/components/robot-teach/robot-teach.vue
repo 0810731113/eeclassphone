@@ -20,7 +20,7 @@
             </p>
           </div>
           <div class="image-box">
-            <img src="./robotaaa.jpg" alt="">
+            <img src="./robotteach2.png" alt="">
           </div>
           <divider>Robot教学功能介绍</divider>
 
@@ -34,12 +34,15 @@
             </p>
             <h4>4.2课堂介绍</h4>
             <div class="image-box">
-              <img src="./robot1111.jpg" alt="">
+              <img src="./robotteach4.png" alt="">
             </div>
             <p>
               默认显示课堂介绍页面（按照后台选定的样式模板进行展示）
             </p>
             <h4>4.3查看页面</h4>
+            <div class="image-box">
+              <img src="./robotteach3.png" alt="">
+            </div>
             <p>
               查看页面提供运行日志、维修日志、设备详情、控制指令等连接，点击链接跳转到设备列表页，选择指定的设备，从 而进入链接对应页面
             </p>
@@ -58,6 +61,9 @@
             <h4>
               4.4视频页面
             </h4>
+            <div class="image-box">
+              <img src="./robotteach1.png" alt="">
+            </div>
             <p>
               ①	查看时需体现资源的分类，每种分类需展示。按本地、查看、下载页签二级导航
             </p>
@@ -73,6 +79,9 @@
             <h4>
               4.5文档页面
             </h4>
+            <div class="image-box">
+              <img src="./robotteach5.png" alt="">
+            </div>
             <p>
               ①	查看时需体现资源的分类，按本地、查看、下载页签二级导航；
             </p>
@@ -198,7 +207,7 @@ export default {
         this.$refs.logisticsBanner.style.paddingTop = 0
         this.$refs.logisticsBanner.style.height = `${RESERVED_HEIGHT}px`
       }else{
-        this.$refs.logisticsBanner.style.paddingTop = '54%'
+        this.$refs.logisticsBanner.style.paddingTop = '62.5%'
         this.$refs.logisticsBanner.style.height = 0
       }
       this.$refs.logisticsBanner.style[transform] = `scale(${scale})`
@@ -212,7 +221,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import '../logistic-list/icon/iconfont.css' ;
-
+@import '../../assets/styles/public' ;
 .main-container{
   position:absolute;
   left:0;
@@ -279,35 +288,18 @@ export default {
 
 
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header ;
 }
 
 .logistic-banner{
-  background-image: url("./robot1.jpg");
+  background-image: url("./robotteach0.png");
   width:100%;
   height:0;
   background-size: cover;
   position:relative;
   z-index:1;
   transform-origin: top;
-  padding-top:54%;
+  padding-top:62.5%;
 }
 
 .footer-box{

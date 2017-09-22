@@ -26,15 +26,28 @@
               <x-button mini type="primary" @click.native="pathToConnect" style="border-radius: 99px;">留言咨询</x-button>
             </div>
             <div class="image-box">
-              <img src="./eeclass1.jpg" alt="">
+              <img src="./yikeInfo1.png" alt="">
             </div>
             <div class="text-box">
               <p>
                 公司在广州、武汉、长沙、无锡、苏州、北京、西安等地设有分公司，并在全国范围内设有代理服务机构，公司销售及服务网络遍及全国三十余个省市。在市场开拓、产品开发、工程设计和售后服务等方面与分公司和代理机构进行了紧密的合作，并始终以客户至上的宗旨来为客户服务，公司有一支快速服务队伍并建立了24小时服务热线，同时建立了客户定期回访制度。
               </p>
             </div>
+            <div class="three-img-mix">
+              <div class="left-box">
+                <div class="left-up-box">
+                  <img src="./yikeInfo4.png" alt="">
+                </div>
+                <div class="left-down-box">
+                  <img src="./yikeInfo6.png" alt="">
+                </div>
+              </div>
+              <div class="right-box">
+                <img src="./yikeInfo5.png" alt="">
+              </div>
+            </div>
             <div class="image-box">
-              <img src="./eeclass2.jpg" alt="">
+              <img src="./yikeInfo2.png" alt="">
             </div>
             <div class="text-box">
               <p>
@@ -48,12 +61,18 @@
                 益课信息隶属于无锡优为物流智控有限公司旗下子公司，很早就和全国两千余所高效建立广泛的战略合作伙伴关系，拥有丰富的客户资源，益课为国内外各高校提供物流实训室的全套方案，以及信息化，智能化的教学方案，推出未来课堂,机器人教学,资源平台等一揽子教育解决方案，率先掀起国内的教育改革的技术浪潮,我们拥有成熟的产品体系以及教育解决方案
               </p>
             </div>
-            <div class="image-box">
-              <img src="./eeclass12.png" alt="">
+            <div class="image-box-logo">
+              <div><img src="./pic8.png" alt=""></div>
+              <div><img src="./pic9.png" alt=""></div>
+              <div><img src="./pic10.png" alt=""></div>
+              <div><img src="./pic11.png" alt=""></div>
+              <div><img src="./pic12.png" alt=""></div>
+              <div><img src="./pic13.png" alt=""></div>
+              <div><img src="./pic14.png" alt=""></div>
+              <div><img src="./pic15.png" alt=""></div>
+
             </div>
-            <div class="image-box">
-              <img src="./eeclass13.png" alt="">
-            </div>
+
           </div>
           <div class="connect-box">
             <div class="logo-box">
@@ -210,7 +229,7 @@ export default {
         this.$refs.logisticsBanner.style.paddingTop = 0
         this.$refs.logisticsBanner.style.height = `${RESERVED_HEIGHT}px`
       }else{
-        this.$refs.logisticsBanner.style.paddingTop = '31%'
+        this.$refs.logisticsBanner.style.paddingTop = '62.5%'
         this.$refs.logisticsBanner.style.height = 0
       }
       this.$refs.logisticsBanner.style[transform] = `scale(${scale})`
@@ -225,6 +244,7 @@ export default {
 <style scoped lang="less">
 
 @import './icons/iconfont.css' ;
+@import '../../assets/styles/public' ;
 div{
   margin-bottom: 0;
 }
@@ -253,6 +273,7 @@ div{
   background-image: url('./bga.jpg');
   background-size: contain ;
   background-repeat: no-repeat;
+  background-position: center center;
   padding-top:24px;
   padding-bottom:24px;
   background-color:block;
@@ -325,7 +346,7 @@ div{
   }
   .image-box{
     width:100%;
-    margin:1rem auto;
+    margin:0 auto;
     img{
       width:100%;
     }
@@ -334,28 +355,11 @@ div{
 
 
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header ;
 }
 
 .logistic-banner{
-  background-image: url("./eeclass4.jpg");
+  background-image: url("./yikeInfo0.png");
   width:100%;
   height:0;
   background-size: cover;
@@ -363,7 +367,56 @@ div{
   top:0 ;
   z-index:1;
   transform-origin: top;
-  padding-top:31%;
+  padding-top:62.5%;
+}
+.image-box-logo{
+  display:-webkit-box;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap ;
+  div{
+    width:50%;
+    text-align:center;
+    display:inline-block;
+    img{
+      width:100%;
+      padding: 2px 4px;
+      box-sizing: border-box;
+    }
+  }
 }
 
+.three-img-mix{
+  display:flex;
+  display:-webkit-box;
+  flex-direction: row;
+  align-items:strecth;
+  .left-box{
+    width:50%;
+    height:50%;
+    .left-up-box{
+      height:50%;
+      padding:0px 2px 1px 0px;
+      box-sizing: border-box;
+    }
+    .left-down-box{
+      height:50%;
+      padding:1px 2px 0px 0px;
+      box-sizing: border-box;
+    }
+    img{
+      width:100%;
+    }
+  }
+  .right-box{
+    width:50%;
+    height:100%;
+    padding:0px 0px 4px 5px;
+    box-sizing: border-box;
+    img{
+      width:100% ;
+      height:100% ;
+    }
+  }
+}
 </style>

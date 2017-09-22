@@ -16,7 +16,7 @@
       <div class="logistic-list" ref="logisticsList">
         <div class="content" ref="content">
           <!--<div class="list-type-grp" v-for="(item, index) in logisticsLists" key="index">-->
-          <div class="list-type-grp" v-for="(item, index) in listData" key="index">
+          <div class="list-type-grp" v-for="(item, index) in listData" key="index" v-if="paramIndex < 0 || index == paramIndex ">
             <div class="type-title">{{item.name}}</div>
             <ul>
               <li v-for="(every, index1) in item.prod" key="index1" @click="gotourl(every.id)">
@@ -87,10 +87,14 @@ export default {
       scrollY: 0,
       loadingEnd: true,
       listLen: 0,
-      listData: []
+      listData: [],
+      paramIndex: -1
     }
   },
   created (){
+    if(this.$route.params.id != null){
+      this.paramIndex = this.$route.params.id
+    }
 
 //    this.$http.get('/logisticlistdata').then(( response ) => {
 //      response = response.body ;
@@ -98,11 +102,12 @@ export default {
 //      console.log(this.listData)
 //    })
 
-    //this.$http.post('http://localhost:8080/eeclassphone/getlogisticlist.do',{ credentials: true }).then(( response ) => {
-    this.$http.get('/eeclassphone/getlogisticlist.do').then(( response ) => {
+    this.$http.get('/logisticlistdata').then(( response ) => {
+//    this.$http.get('/eeclassphone/getlogisticlist.do').then(( response ) => {
+//    this.$http.get('getlogisticlist.do').then(( response ) => {
       console.log(response)
-      //response = response.body ;
-      this.listData = response.data.ldd ;
+      response = response.body ;
+      this.listData = response.data ;
       console.log(this.listData)
     })
   },
@@ -181,7 +186,8 @@ export default {
           this.mainScroll.refresh()
         }
       })
-
+      //this.mainScroll.scrollToElement(this.$refs.ltype005 , 300, 0, 0)
+      //this.mainScroll.scrollTo(0, -600, 0, 0)
     },
     hideSidebar(){
       this.sideShow = false;
@@ -190,7 +196,7 @@ export default {
   },
   watch: {
     scrollY (newVal) {
-      //console.log(newVal)
+//      console.log(newVal)
       let translateY = Math.max(this.minTranslateY, newVal)
       let scale = 1
       let zIndex = 0
@@ -224,7 +230,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import './icon/iconfont.css' ;
-
+@import '../../assets/styles/public' ;
 .loading-container{
   position:absolute;
   width: 100%;
@@ -305,33 +311,7 @@ export default {
 }
 
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
-  .show-sidebar-box{
-    position:absolute;
-    right:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header
 }
 
 .logistic-list{

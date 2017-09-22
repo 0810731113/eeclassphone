@@ -18,7 +18,7 @@
             <p>未来课堂软件的核心是课堂教学，是对传统教学模式、教学内容、教学方法、教学技术、教学评价、教学环境的创新成果。软件通过移动互联网技术实现教师与学生在课堂上可以进行实时互动，移动教学。增加课堂教学的趣味性，增强和激发学生的课堂体验与学习积极性。打造高效课堂，推进教学课程改革，实现全面提高教育教学质量。</p>
           </div>
           <div class="image-box">
-            <img src="./futureclass1.jpg" alt="">
+            <img src="./futureclass2.png" alt="">
           </div>
           <divider>未来课堂功能介绍</divider>
           <div class="text-box">
@@ -27,6 +27,9 @@
             <p>学生端：实时接收教师下发的教学项目，把生动逼真的画面直接呈现在学生面前，学生给出答案后又会实时反馈到教师端。</p>
             <p>后台管理：为教师提供教学资源的编辑和上传。管理所有教学历史信息，便于进行大数据分析，为改进教学质量提供数据支撑。</p>
             <p>具体的教学功能包括：课堂讨论,课堂测验,课堂提问,课堂微博,课堂互动等功能。</p>
+          </div>
+          <div class="image-box" style="width:96%;">
+            <img src="./futureclass1.png" alt="">
           </div>
         </div>
         <div class="footer-box">
@@ -115,7 +118,7 @@ export default {
         } else {
           this.listLen = ll ;
           this.mainScroll.refresh() ;
-       }
+        }
       })
 
 
@@ -124,7 +127,7 @@ export default {
   },
   watch: {
     scrollY(newVal){
-      console.log(newVal)
+//      console.log(newVal)
       let translateY = Math.max(this.minTranslateY,newVal)
       let scale = 1
       let zIndex = 0
@@ -155,7 +158,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import '../logistic-list/icon/iconfont.css' ;
-
+@import '../../assets/styles/public' ;
 .main-container{
   position:absolute;
   left:0;
@@ -208,28 +211,11 @@ export default {
 
 
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header ;
 }
 
 .logistic-banner{
-  background-image: url("./weilaiketang1.jpg");
+  background-image: url("./futureclass0.png");
   width:100%;
   height:0;
   background-size: cover;

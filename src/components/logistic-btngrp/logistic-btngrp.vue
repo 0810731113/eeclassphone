@@ -1,43 +1,42 @@
 <template>
   <div>
-    <!--<div class="logistic-box">-->
-      <!--<ul>-->
-        <!--<li v-for="(item, index) in logisticInfo" key="index">-->
-          <!--<div @click="toAnotherPage(item)" class="img-box"><img :src="item.icon" alt=""></div>-->
-          <!--<div class="text-box">{{item.text}}</div>-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-    <div class="industry-box">
-      <div class="ul">
-        <div class="li" v-for="(item , index) in industryInfo" key="item.id" >
-          <div class="icon-box" @click="toAnotherPage(item,$event)" ><i :class="item.iconclass"></i></div>
+    <div class="logistic-box">
+      <ul>
+        <li v-for="(item, index) in logisticInfo" key="index">
+          <div @click="toAnotherPage(item)" class="img-box"><img :src="item.icon" alt=""></div>
           <div class="text-box">{{item.text}}</div>
-          <span v-if=""></span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-    <div class="industry-box">
-      <div class="ul">
-        <div class="li" v-for="(item , index) in industryInfo1" key="item.id" >
-          <div class="icon-box" @click="toAnotherPage(item,$event)" ><i :class="item.iconclass"></i></div>
+    <div class="logistic-box" style="margin-top:12px;">
+      <ul>
+        <li v-for="(item, index) in logisticInfo1" key="index">
+          <div @click="toAnotherPage(item)" class="img-box"><img :src="item.icon" alt=""></div>
           <div class="text-box">{{item.text}}</div>
-          <span v-if=""></span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
     <!--<div class="industry-box">-->
       <!--<div class="ul">-->
-        <!--<ripple-demo v-for="(item, index) in industryInfo" key="index"></ripple-demo>-->
+        <!--<div class="li" v-for="(item , index) in industryInfo" key="item.id" >-->
+          <!--<div class="icon-box" @click="toAnotherPage(item,$event)" ><i :class="item.iconclass"></i></div>-->
+          <!--<div class="text-box">{{item.text}}</div>-->
+          <!--<span v-if=""></span>-->
+        <!--</div>-->
       <!--</div>-->
     <!--</div>-->
+
     <div class="teach-software-box">
       <div class="left-box" @click="toSoftwarePage('futureclass')" >
-        未来课堂
+        <img src="../../assets/icons/futureClass.png" alt="">
       </div>
       <div class="right-box">
-        <div class="right-up-box" @click="toSoftwarePage('sourceplatform')">资源平台</div>
-        <div class="right-down-box" @click="toSoftwarePage('robotteach')">Robot教学</div>
+        <div class="right-up-box" @click="toSoftwarePage('sourceplatform')">
+          <img src="../../assets/icons/sourcePlatform.png" alt="">
+        </div>
+        <div class="right-down-box" @click="toSoftwarePage('robotteach')">
+          <img src="../../assets/icons/robotTeach.png" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -50,12 +49,12 @@
     directives: {
       TransferDom
     },
-    props: {
-      name: {
-        type: String,
-        default: 'Vue!'
-      }
-    },
+//    props: {
+//      id: {
+//        type: Number,
+//        default: -1
+//      }
+//    },
     components: {
       XHeader,
       Actionsheet,
@@ -104,69 +103,68 @@
             url: '/logisticdetail/lthj'
           }
         ],
-        industryInfo1: [
-          {
-            id: 'industry01',
-            text: '巷道式堆垛机',
-            iconclass:'iconfont icon-addhj' ,
-            url: '/logisticdetail/xdsddj'
-
-          },
-          {
-            id: 'industry02',
-            text: '门座式起重机',
-            iconclass:'iconfont icon-lvdaiqizhongji' ,
-            url: '/logisticdetail/mzsqzj'
-          },
-          {
-            id: 'industry03',
-            text: '滑块式分拣线',
-            iconclass:'iconfont icon-gaokongzuoyeche' ,
-            url: '/logisticdetail/hksfjx'
-          },
-          {
-            id: 'industry04',
-            text: '智能购物车',
-            iconclass:'iconfont icon-gouwuche' ,
-            url: '/logisticdetail/zngwc'
-          },
-          {
-            id: 'industry05',
-            text: '摆臂分拣机',
-            iconclass:'iconfont icon-hangshiji' ,
-            url: '/logisticdetail/bbfjj'
-          }
-        ],
         logisticInfo: [
           {
             id: 'lo001' ,
-            text: '立体货架',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_03.png',
-            url: '/logisticdetail/lthj'
+            text: '仓储机器人',
+            icon:require('../../assets/icons/ccjqr.png'),
+            url: '/robotdetail/cc-robot'
           },
           {
             id: 'lo002' ,
-            text: '巷道式堆垛机',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_05.png',
-            url: '/logisticdetail/xdsddj'
+            text: '多层穿梭车',
+            icon:require('../../assets/icons/dccsc.png'),
+            url: '/robotdetail/dccs-car'
           },
           {
             id: 'lo003' ,
-            text: '链条式输送机',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_07.png',
-            url: '/logisticdetail/ltsssj'
+            text: '激光叉车',
+            icon:require('../../assets/icons/jgcc.png'),
+            url: '/robotdetail/jgdh-agv'
           },
           {
             id: 'lo004' ,
-            text: '滑块式分拣线',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_09.png',
-            url: '/logisticdetail/hksfjx'
+            text: '助教机器人',
+            icon:require('../../assets/icons/zjjqr.png'),
+            url: '/robotdetail/zj-robot'
           },
           {
             id: 'lo005' ,
-            text: '智能购物车',
-            icon:'http://pic.eeclasscloud.com/eeclass-offfice/logisticIcon_11.png',
-            url: '/logisticdetail/zngwc'
+            text: '仓储设备',
+            icon:require('../../assets/icons/ccsb.png'),
+            url: '/logisticlist/0'
+          }
+        ],
+        logisticInfo1: [
+          {
+            id: 'lo001' ,
+            text: '搬运设备',
+            icon:require('../../assets/icons/zdbysb.png'),
+            url: '/logisticlist/1'
+          },
+          {
+            id: 'lo002' ,
+            text: '输送设备',
+            icon:require('../../assets/icons/ssxsb.png'),
+            url: '/logisticlist/2'
+          },
+          {
+            id: 'lo003' ,
+            text: '分流设备',
+            icon:require('../../assets/icons/flzx.png'),
+            url: '/logisticlist/3'
+          },
+          {
+            id: 'lo004' ,
+            text: '拣选系统',
+            icon:require('../../assets/icons/fzjxxt.png'),
+            url: '/logisticlist/4'
+          },
+          {
+            id: 'lo005' ,
+            text: '港口实训',
+            icon:require('../../assets/icons/gksxsb.png'),
+            url: '/logisticlist/6'
           }
         ]
       }
@@ -194,42 +192,45 @@
     width:98%;
     margin: 18px auto;
     display: flex;
-    display:-webkit-flex;
+    display:-webkit-box;
     height:250px;
+    align-items:strecth;
     .left-box{
       width:38.2%;
       background-color: #f3f3f3;
       border: 6px solid #FFF;
       box-sizing: border-box;
       text-align: center;
-      padding-top: 28%;
-
+      overflow: hidden;
     }
     .right-box{
       width:61.3%;
-      display:flex;
       height:100%;
-      display:-webkit-flex;
+      display:-webkit-box;
       display:flex;
       flex-direction:column ;
       .right-up-box{
         width:100%;
+        height:50%;
         flex-grow:1;
         background-color: #f3f3f3;
         border: 6px solid #FFF;
         box-sizing: border-box;
         text-align: center;
-        padding-top: 32px;
       }
       .right-down-box{
         width:100%;
+        height:50%;
         flex-grow:1;
         background-color: #f3f3f3;
         border: 6px solid #FFF;
         box-sizing: border-box;
         text-align: center;
-        padding-top: 32px;
       }
+    }
+    img{
+      width:100%;
+      height:100%;
     }
   }
 
@@ -239,9 +240,6 @@
       font-size: 24px;
       line-height: 1.0;
     }
-  }
-  .main-container {
-    /*position:relative;*/
   }
   .industry-box{
     .ul{
@@ -286,7 +284,7 @@
         .text-box{
           text-align: center;
           font-family: "Microsoft YaHei";
-          font-size: 14px;
+          font-size: 8px;
           padding-top: 6px;
         }
       }

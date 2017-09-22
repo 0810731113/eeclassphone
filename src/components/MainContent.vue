@@ -8,11 +8,11 @@
       <div class="content" ref="content">
         <div>
           <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
+            <swiper-slide><img src="../assets/banner/banner1.jpg" style="width: 100%;" /></swiper-slide>
+            <swiper-slide><img src="../assets/banner/banner2.jpg" style="width: 100%;" /></swiper-slide>
+            <swiper-slide><img src="../assets/banner/banner3.jpg" style="width: 100%;" /></swiper-slide>
             <swiper-slide><img src="../assets/banner/banner4.jpg" style="width: 100%;" /></swiper-slide>
-            <swiper-slide><img src="../assets/banner/bannerfutureeeclass.jpg" style="width: 100%;" /></swiper-slide>
-            <swiper-slide><img src="../assets/banner/banner2.png" style="width: 100%;" /></swiper-slide>
-            <swiper-slide><img src="../assets/banner/bannerJ3.jpg" style="width: 100%;" /></swiper-slide>
-            <swiper-slide><img src="../assets/banner/bannerJ1.jpg" style="width: 100%;" /></swiper-slide>
+            <swiper-slide><img src="../assets/banner/banner5.jpg" style="width: 100%;" /></swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
           </swiper>
         </div>
@@ -22,34 +22,40 @@
       </div>
     </div>
 
-    <tabbar @on-index-change="getNavIndex" v-model="selectItem" style="background-color: #FFF;">
+    <tabbar @on-index-change="getNavIndex" v-model="selectItem" style="background-color: #26234D;">
       <tabbar-item link="/maincontent">
         <div slot="icon" class="nav-icon-btn">
-          <i class="iconfont icon-home"></i>
+          <!--<i class="iconfont icon-home"></i>-->
+          <img src="../assets/icons/main0.png" alt="" v-if="currNavIndex===0">
+          <img src="../assets/icons/main1.png" alt="" v-else>
         </div>
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item show-dot>
         <div slot="icon" class="nav-icon-btn">
-          <i class="iconfont icon-jiaoxue"></i>
+          <img src="../assets/icons/teach0.png" alt="" v-if="currNavIndex===1">
+          <img src="../assets/icons/teach1.png" alt="" v-else>
         </div>
         <span slot="label">教学</span>
       </tabbar-item>
       <tabbar-item link="/logisticlist" >
         <div slot="icon" class="nav-icon-btn">
-          <i class="iconfont icon-cangku"></i>
+          <img src="../assets/icons/logistics0.png" alt="" v-if="currNavIndex===2">
+          <img src="../assets/icons/logistics1.png" alt="" v-else>
         </div>
         <span slot="label">物流</span>
       </tabbar-item>
       <tabbar-item >
         <div slot="icon" class="nav-icon-btn">
-          <i class="iconfont icon-jiqiren"></i>
+          <img src="../assets/icons/product0.png" alt="" v-if="currNavIndex===3">
+          <img src="../assets/icons/product1.png" alt="" v-else>
         </div>
         <span slot="label">工业</span>
       </tabbar-item>
       <tabbar-item badge="2" link="/eeclassintro">
         <div slot="icon" class="nav-icon-btn">
-          <i class="iconfont icon-zhuye"></i>
+          <img src="../assets/icons/yike0.png" alt="" v-if="currNavIndex===4">
+          <img src="../assets/icons/yike1.png" alt="" v-else>
         </div>
         <span slot="label">益课</span>
       </tabbar-item>
@@ -132,7 +138,6 @@
 //            console.log(swiper)
           },
           // more Swiper configs and callbacks...
-          // ...
         },
         bottomCount: 20,
 //        conHei : document.body.clientHeight - 54 + 'px'
@@ -170,7 +175,7 @@
           }
         ],
         showMenus: false,
-        selectItem: 2,
+        selectItem: 0,
         listLen: 0
       }
     },
@@ -202,7 +207,6 @@
         }else{
           this.listLen = ll
           this.mainScroll.refresh()
-
         }
       })
       },
@@ -261,8 +265,9 @@
     background-color: #2eb2e8;
   }
   .pageHeader{
-    background-color: #f6f6f6;
+    background-color: #26234D;
     height:36px;
+    display: -webkit-box ;
     display: flex;
     align-items:center ;
     vertical-align: bottom;
@@ -273,7 +278,7 @@
   .pageHeader span{
     line-height: 36px;
     /*height:24px;*/
-    color:#4e4e4e;
+    color:#FFF;
     font-size:18px;
     display:block;
 
@@ -333,9 +338,9 @@
     bottom: -16px;
     width: 100%;
 
-  img {
-    width: 18px;
-  }
+    img {
+      width: 18px;
+    }
 
   }
   }

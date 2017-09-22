@@ -20,18 +20,21 @@
               <img src="./sourceplatform_01.png" alt="">
             </div>
             <div class="info-box">
-              <h5>教学资源到云端管理平台</h5>
-              <p>教师登录，修改名称，登录密码,头像,专业等基本信息,查看自己</p>
+              <h5>上传资源到云平台</h5>
+              <p>上传教学资源到云端管理平台，可查看云资源，也可共享自己的资源到云平台。</p>
             </div>
           </div>
           <div class="two-clumn-box column-magin-bottom">
             <div class="info-box">
-              <h5>教学资源到云端管理平台</h5>
-              <p>教师登录，修改名称，登录密码,头像,专业等基本信息,查看自己</p>
+              <h5>云端资源管理更便捷</h5>
+              <p>快速上传学习资源，多所学校资源共享，知识分享更轻便。</p>
             </div>
             <div class="image-box">
               <img src="./sourceplatform_04.png" alt="">
             </div>
+          </div>
+          <div class="anotherImg">
+            <img src="../../assets/banner/sourceplatform1.png" alt="">
           </div>
           <divider>资源平台功能介绍</divider>
 
@@ -42,6 +45,7 @@
             <p>C.	课程介绍信息的添加</p>
             <p>D.	课程视频资源的添加和上传</p>
             <p>E.	课程PDF文档资源的添加和上传</p>
+            <img src="../../assets/banner/sourceplatform2.png" alt="">
             <h4>超级管理员的功能</h4>
             <p>A.	管理学校信息 (新增学校信息并为学校分配学校管理员账号)</p>
             <p>B.	管理教师信息</p>
@@ -51,7 +55,8 @@
             <p>F.	权限管理</p>
             <p>G.	设备管理</p>
             <p>H.	设备运行日志管理</p>
-            <p> I.	设备故障维修管理</p>
+            <p>I.设备故障维修管理</p>
+            <img src="../../assets/banner/sourceplatform3.png" alt="">
             <h4>学校管理员的功能</h4>
             <p>A.	管理老师信息并为其分配账号</p>
             <p>B.	管理实训室设备信息</p>
@@ -189,7 +194,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import '../logistic-list/icon/iconfont.css' ;
-
+@import '../../assets/styles/public' ;
 .main-container{
   position:absolute;
   left:0;
@@ -222,6 +227,12 @@ export default {
   margin: 6px auto ;
   padding-top: 12px;
   /*text-align:center;*/
+  .anotherImg{
+    img{
+      max-width:100%;
+      margin: 12px auto;
+    }
+  }
   .text-box{
     text-align: left;
     padding-left: 1rem;
@@ -239,6 +250,10 @@ export default {
     }
     p{
       padding:0.6rem 0rem;
+    }
+    img{
+      max-width:100%;
+      margin: 12px auto;
     }
   }
   .column-magin-bottom{
@@ -277,30 +292,12 @@ export default {
   }
 }
 
-
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header ;
 }
 
 .logistic-banner{
-  background-image: url("./sourceplatform1.jpg");
+  background-image: url("./sourceplatform0.png");
   width:100%;
   height:0;
   background-size: cover;
@@ -320,6 +317,5 @@ export default {
   line-height: 2.4rem;
   text-align: center;
 }
-
 
 </style>

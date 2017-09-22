@@ -19,7 +19,8 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
+    bundleAnalyzerReport: process.env.npm_config_report 
+
   },
   dev: {
     env: require('./dev.env'),
@@ -36,7 +37,7 @@ module.exports = {
     cssSourceMap: false,
     proxyTable: {
       '/eeclassphone': {
-        target: 'http://127.0.0.1:8080/eeclassphone',
+        target: 'http://localhost:8080/eeclassphone',
         changeOrigin: true,
         pathRewrite: {
           '^/eeclassphone':''

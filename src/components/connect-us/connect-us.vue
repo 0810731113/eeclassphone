@@ -15,17 +15,17 @@
           </h5>
           <group>
             <x-input title="name"  placeholder="姓名" name="username" v-model="username" is-type="china-name" >
-              <img slot="label" style="padding-right:10px;display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_03.png" width="24" height="24">
+              <img slot="label" style="padding-right:10px;display:block;" src="./username.png" width="24" height="24">
             </x-input>
           </group>
           <group>
             <x-input title="Email"  placeholder="邮箱" name="email" v-model="email" is-type="email">
-              <img slot="label" style="padding-right:10px; display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_07.png" width="24" height="24">
+              <img slot="label" style="padding-right:10px; display:block;" src="./mail.png" width="24" height="24">
             </x-input>
           </group>
           <group>
             <x-input title="name"  placeholder="电话" name="tel" v-model="telphone" keyboard="number" is-type="china-mobile" >
-              <img slot="label" style="padding-right:10px;display:block;" src="http://eeresource.eeclasscloud.com/logisticIcon/message_10.png" width="24" height="24">
+              <img slot="label" style="padding-right:10px;display:block;" src="./telephone.png" width="24" height="24">
             </x-input>
           </group>
           <group>
@@ -87,13 +87,15 @@ export default {
         this.inputwarn = true
         return
       }
-      if(this.question == null || !(/[\u4e00-\u9fa5\w]{4,120}/.test(this.question))){
+      if(this.question == null || !(/[\u4e00-\u9fa5\w ]{4,120}/.test(this.question))){
         console.log("问题输入有误")
         this.inputwarn = true
         return
       }
 
       this.$http.get('/sendemail' , {
+//      this.$http.post('/eeclassphone/sendemail.do', {
+//      this.$http.get('sendemail.do', {
         params:{
           username: this.username ,
           email: this.email ,
@@ -101,16 +103,15 @@ export default {
           question: this.question
         }
       }).then(( response ) => {
+        console.log(response);
         var response = response.body ;
+        response = JSON.parse( JSON.stringify(response) )
         if(response.error == 0){
           this.toastshow = true
         }
         console.log(response);
       })
     }
-
-  },
-  watch: {
 
   }
 }
@@ -119,6 +120,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import '../logistic-list/icon/iconfont.css' ;
+@import '../../assets/styles/public' ;
 
 .main-container{
   position:absolute;
@@ -155,35 +157,9 @@ export default {
 
 
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header ;
 }
 
-.banner-box{
-  background-image: url("./connect-header.jpg") ;
-  width: 100%;
-  height: 0 ;
-  background-size: cover;
-  position: relative;
-  z-index:1;
-  transform-origin: top;
-  padding-top: 53%;
-}
+
 
 </style>

@@ -14,11 +14,12 @@
     <div class="scroll-box" ref="scrollBox">
       <div class="content" ref="content">
         <div class="content-box">
-          <div class="mark-label">
-            Make In China
-            <span>高端制造</span>
-          </div>
+          <!--<div class="mark-label">-->
+            <!--<h4>产品简介</h4>-->
+            <!--<span>Made In China</span>-->
+          <!--</div>-->
           <h3>{{listData.title}}</h3>
+          <span style="color:#b7bdc4; line-height:2rem;">Made In China</span>
           <div class="summery-text">
             <p v-for="(item, index) in listData.text">{{item}}</p>
           </div>
@@ -105,6 +106,8 @@ export default {
   created (){
     var id = this.$route.params.id ;
     this.$http.get('/ldd', {
+//    this.$http.get('/eeclassphone/getlogisticdetail.do', {
+//    this.$http.get('getlogisticdetail.do', {
       params: {
         id: id
       }
@@ -195,7 +198,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import '../logistic-list/icon/iconfont.css' ;
-
+@import '../../assets/styles/public' ;
 .main-container{
   position:absolute;
   left:0;
@@ -231,6 +234,7 @@ export default {
   text-align:center;
   .mark-label{
     color:#b7bdc4;
+    text-align: center ;
     span{
       background-color: #74d1f7;
       color:#fff ;
@@ -240,7 +244,8 @@ export default {
   }
   h3{
     text-align: center;
-    line-height: 4rem;
+    line-height: 3rem;
+    margin-top: 1rem;
     color:#3e3e3e;
   }
   .summery-text{
@@ -282,35 +287,8 @@ export default {
 
 }
 
-
 .l-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 998;
-  background-color: rgba(0,0,0,0.5);
-  line-height: 36px;
-  text-align: center;
-  color: #ffb400;
-  font-weight:200;
-  .return-box{
-    position:absolute;
-    left:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
-  .show-sidebar-box{
-    position:absolute;
-    right:12px;
-    top:0px;
-    i{
-      font-size: 18px;
-      color: #ffb400;
-    }
-  }
+  .l-header
 }
 
 .logistic-banner{
